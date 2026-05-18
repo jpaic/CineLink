@@ -18,6 +18,10 @@ load_dotenv()
 TMDB_API_KEY = os.getenv("TMDB_API_KEY", "")
 TMDB_BASE_URL = os.getenv("TMDB_BASE_URL", "https://api.themoviedb.org/3").rstrip("/")
 FRONTEND_ORIGIN = os.getenv("FRONTEND_ORIGIN", "http://127.0.0.1:3000")
+FRONTEND_ORIGINS = os.getenv(
+    "FRONTEND_ORIGINS",
+    ",".join([FRONTEND_ORIGIN, "http://localhost:3000", "http://127.0.0.1:3000"]),
+)
 PATHFINDING_MIN_VOTE_COUNT = 250
 PATHFINDING_MIN_POPULARITY = 2.0
 PATHFINDING_MOVIE_LIMIT = 35
@@ -30,7 +34,7 @@ app = FastAPI(title="CineLink API", version="0.1.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[FRONTEND_ORIGIN, "http://localhost:3000", "http://127.0.0.1:3000"],
+    allow_origins=[origin.strip() for origin in FRONTEND_ORIGINS.split(",") if origin.strip()],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

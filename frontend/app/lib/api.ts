@@ -2,7 +2,11 @@ import { actorSuggestions, hollywoodActors, movieSuggestions, samplePath } from 
 import { sampleChallenge } from "./mock-data";
 import type { ActorSuggestion, Challenge, HardWaypoint, MovieSuggestion, PathStep, ScoreResult } from "./mock-data";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://127.0.0.1:8000";
+const DEFAULT_API_BASE_URL = process.env.NODE_ENV === "production" ? "/_/backend" : "http://127.0.0.1:8000";
+const API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_URL ||
+  process.env.NEXT_PUBLIC_API_BASE_URL ||
+  DEFAULT_API_BASE_URL;
 const SCORE_TIMEOUT_MS = 120000;
 
 type BackendActor = {
