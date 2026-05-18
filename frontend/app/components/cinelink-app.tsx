@@ -385,7 +385,7 @@ export function CineLinkApp() {
             </div>
           </nav>
 
-          <div className="grid gap-8 py-10 lg:grid-cols-[minmax(0,1fr)_420px] lg:items-end">
+          <div className="grid gap-8 py-10 lg:grid-cols-[minmax(0,1fr)_420px] lg:items-start">
             <div className="max-w-3xl">
               <p className="mb-5 inline-flex rounded-md border border-[#efbd58]/35 bg-[#efbd58]/12 px-3 py-2 text-sm font-bold uppercase tracking-[0.16em] text-[#f5d58b]">
                 The web of cinema
@@ -515,13 +515,13 @@ function HardModeCard({
   waypoint: HardWaypoint;
 }) {
   return (
-    <div className="rounded-lg border border-[#efbd58]/30 bg-[#fff4cf] p-5 text-[#161719] shadow-[0_20px_70px_rgba(0,0,0,0.26)]">
-      <div className="flex items-start justify-between gap-4">
+    <div className="rounded-lg border border-[#efbd58]/30 bg-[#fff4cf] p-4 text-[#161719] shadow-[0_16px_46px_rgba(0,0,0,0.18)]">
+      <div className="flex items-start justify-between gap-3">
         <div>
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#805b15]">
+          <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#805b15]">
             Director&apos;s Cut
           </p>
-          <h2 className="mt-2 text-2xl font-semibold">{waypoint.name}</h2>
+          <h2 className="mt-2 text-xl font-semibold">{waypoint.name}</h2>
         </div>
         <button
           type="button"
@@ -548,10 +548,10 @@ function HardModeCard({
         </button>
       </div>
       <p className="mt-2 text-sm font-semibold text-black/58">{waypoint.subtitle}</p>
-      <p className="mt-3 text-sm leading-6 text-black/62">{waypointHint(waypoint)}</p>
+      <p className="mt-2 text-sm leading-6 text-black/62">{waypointHint(waypoint)}</p>
       <p
         className={[
-          "mt-4 rounded-md border px-3 py-2 text-xs font-black uppercase tracking-[0.14em]",
+          "mt-3 rounded-md border px-3 py-2 text-[11px] font-black uppercase tracking-[0.14em]",
           hit
             ? "border-[#1f7a49]/20 bg-[#e7f6ed] text-[#1f7a49]"
             : "border-[#805b15]/18 bg-white/65 text-[#805b15]",
