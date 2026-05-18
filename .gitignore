@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+*.venv
+venv/
+ENV/
+env/
+
+# Node
+node_modules/
+.next/
+/dist
+/build
+
+# Editors
+.DS_Store
+*.swp
+*.swo
