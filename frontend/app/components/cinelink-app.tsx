@@ -387,9 +387,6 @@ export function CineLinkApp() {
 
           <div className="grid gap-8 py-10 lg:grid-cols-[minmax(0,1fr)_420px] lg:items-start">
             <div className="max-w-3xl">
-              <p className="mb-5 inline-flex rounded-md border border-[#efbd58]/35 bg-[#efbd58]/12 px-3 py-2 text-sm font-bold uppercase tracking-[0.16em] text-[#f5d58b]">
-                The web of cinema
-              </p>
               <h1 className="text-5xl font-semibold leading-[1.01] sm:text-6xl lg:text-7xl">
                 Build a path to {challenge.targetActor.name}.
               </h1>
